@@ -73,14 +73,14 @@ class ProductRepository:
         }
         self._products_metadata = db
 
-    def most_commented_products(self, n: int = 3) -> pd.Series:
+    async def most_commented_products(self, n: int = 3) -> pd.Series:
         """Get products with most reviews."""
         if not self._products:
             raise RuntimeError("Products not loaded")
 
         return self._reviews_per_product.nlargest(n, keep="all")
 
-    def least_commented_products(self, n: int = 3) -> pd.Series:
+    async def least_commented_products(self, n: int = 3) -> pd.Series:
         """Get products with lowest reviews."""
         if not self._products:
             raise RuntimeError("Products not loaded")

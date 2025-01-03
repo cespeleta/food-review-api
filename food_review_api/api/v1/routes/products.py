@@ -30,7 +30,7 @@ async def get_products(
         ProductsListResponse: A response containing a list of all products available in
         the service.
     """
-    return await ProductsListResponse(
+    return ProductsListResponse(
         available_products=product_repository.available_products
     )
 
