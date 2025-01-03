@@ -2,7 +2,7 @@
 name = "food-review-api"
 version = "0.1.0"
 description = "Food Review API"
-authors = ["Carlos Espeleta <carlos.espeleta.chiva@gmail.com>"]
+authors = ["Carlos Espeleta"]
 readme = "README.md"
 
 [tool.poetry.scripts]
