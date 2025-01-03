@@ -27,4 +27,4 @@ async def get_product_reviews(
         ReviewsResponse: A response containing the list of reviews for the given product.
     """
     logger.debug(f"Received request with product_id: {product_id}")
-    return await ReviewsResponse(reviews=reviews_repository.get(product_id).reviews)
+    return ReviewsResponse(reviews=reviews_repository.get(product_id).reviews)
