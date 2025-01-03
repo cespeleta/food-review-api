@@ -78,14 +78,16 @@ class ProductRepository:
         if not self._products:
             raise RuntimeError("Products not loaded")
 
-        return self._reviews_per_product.nlargest(n, keep="all")
+        counts = self._reviews_per_product.unique()[:n]
+        return self._reviews_per_product[self._reviews_per_product.isin(counts)]
 
     async def least_commented_products(self, n: int = 3) -> pd.Series:
         """Get products with lowest reviews."""
         if not self._products:
             raise RuntimeError("Products not loaded")
 
-        return self._reviews_per_product.nsmallest(n, keep="all")
+        counts = self._reviews_per_product.unique()[-n:]
+        return self._reviews_per_product[self._reviews_per_product.isin(counts)]
 
     def _load_reviews_csv(self, filename: str) -> pd.DataFrame:
         """Load the reviews CSV file into a pandas DataFrame.
