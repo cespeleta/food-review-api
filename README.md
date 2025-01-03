@@ -13,7 +13,7 @@ This repository contains the definition and deployment for the Food Review Servi
 
 ## Dataset
 
-The [Amazon Fine Good Reviews](https://www.kaggle.com/datasets/snap/amazon-fine-food-reviews) dataset consists of reviews of fine foods from amazon. Reviews include product and user information, ratings, and a plain text review. It also includes reviews from all other Amazon categories. The dataset has been reduced to make the repository lighter.
+The <a href="https://www.kaggle.com/datasets/snap/amazon-fine-food-reviews" target="_blank">Amazon Fine Good Reviews Dataset</a> consists of reviews of fine foods from Amazon. Reviews include product and user information, ratings, and a plain text review. It also includes reviews from all other Amazon categories. The dataset has been reduced to make the repository lighter.
 
 ![alt Amazon Fine Good Reviews Dataset Preview](resources/dataset-preview.png)
 
