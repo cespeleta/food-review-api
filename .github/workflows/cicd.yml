@@ -1,0 +1,32 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    container:
+      image: mwalbeck/python-poetry:1.8-3.11
+      
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install make
+        run: apt-get update && apt-get install -y make
+
+      - name: Lint Check
+        run: |
+          poetry install --only dev
+          make lint.check
+
+      - name: Unit Tests
+        run: |
+          poetry install --only main,test
+          make test
