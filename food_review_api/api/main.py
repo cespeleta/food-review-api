@@ -25,11 +25,3 @@ def build_service_app() -> FastAPI:
     add_exception_handlers(app=app)
     add_middlewares(app=app, config=config)
     return app
-
-
-# Uncomment to debug
-if __name__ == "__main__":
-    import uvicorn
-
-    app = build_service_app()
-    uvicorn.run(app=app, host="0.0.0.0", port=8000)

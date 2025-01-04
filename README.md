@@ -54,7 +54,7 @@ For more information about the endpoints go to the [API documentation](./food_re
 
 ### How to debug the API
 
-During application development it is common to test code, use breakpoints and analyze it. To do this, uncomment lines 31-35 of the [main](./food_review_api/api/main.py) file and run the file in debug mode.
+During application development it is common to test code, use breakpoints and analyze it. To do this, use the configuration inside the [.vscode](./.vscode/launch.json) folder to run the application in debug model.
 
 ## Development
 
