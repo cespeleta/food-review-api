@@ -30,13 +30,7 @@ jobs:
         run: |
           poetry install --only main,test
           make test
-
-      - name: Publish test and coverage reports
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-results
-          path: /__w/food-review-api/food-review-api/.test_results
-
+          
       - name: Dockerfile Check
         uses: hadolint/hadolint-action@v3.1.0
         with:
