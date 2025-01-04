@@ -1,5 +1,8 @@
 name: CI/CD Pipeline
 
+env:
+  SERVICE_NAME: food-review-api
+  
 on:
   push:
     branches:
@@ -58,5 +61,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.SERVICE_NAME }}:latest:${{ github.sha }}
-            ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.SERVICE_NAME }}:latest
+            ${{ secrets.DOCKER_USERNAME }}/${{ env.SERVICE_NAME }}:latest:${{ github.sha }}
+            ${{ secrets.DOCKER_USERNAME }}/${{ env.SERVICE_NAME }}:latest
