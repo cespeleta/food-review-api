@@ -31,18 +31,11 @@ jobs:
           poetry install --only main,test
           make test
 
-      - name: Publish Test Results
-        if: always()
-        uses: EnricoMi/publish-unit-test-result-action@v2
+      - name: Publish test and coverage reports
+        uses: actions/upload-artifact@v3
         with:
-          junit_files: .test_results/junit.xml
-
-      - name: Upload Coverage Reports
-        if: always()
-        uses: codecov/codecov-action@v3
-        with:
-          files: .test_results/coverage.xml
-          fail_ci_if_error: true
+          name: test-results
+          path: .test_results
 
       - name: Dockerfile Check
         uses: hadolint/hadolint-action@v3.1.0
