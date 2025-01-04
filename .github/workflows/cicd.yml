@@ -1,0 +1,25 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Lint Check
+        run: |
+          poetry install --only dev
+          make lint.check
+
+      - name: Unit Tests
+        run: |
+          poetry install --only main,test
+          make test
