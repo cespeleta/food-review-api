@@ -1,9 +1,5 @@
 name: CI/CD Pipeline
 
-env:
-  SERVICE_NAME: food-review-service
-  PYTHON_BASE_IMAGE: mwalbeck/python-poetry:1.8-3.11
-
 on:
   push:
     branches:
@@ -16,7 +12,7 @@ jobs:
   checks:
     runs-on: ubuntu-latest
     container:
-      image: ${{ env.PYTHON_BASE_IMAGE }}
+      image: mwalbeck/python-poetry:1.8-3.11
       
     steps:
       - name: Checkout repository
