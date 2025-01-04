@@ -18,6 +18,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Install make
+        run: apt-get update && apt-get install -y make
+
       - name: Lint Check
         run: |
           poetry install --only dev
