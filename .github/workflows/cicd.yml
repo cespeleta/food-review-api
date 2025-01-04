@@ -29,6 +29,7 @@ jobs:
       - name: Unit Tests
         run: |
           poetry install --only main,test
+          mkdir -p .test_results
           make test
 
       - name: Publish test and coverage reports
